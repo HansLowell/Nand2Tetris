@@ -14,5 +14,10 @@ CHIP DMux {
     OUT a, b;
 
     PARTS:
-    // Put your code here:
+Nand(a=sel, b=sel, out=notsel);
+Nand(a=notsel, b=in, out=orsela);
+Nand(a=orsela, b=orsela, out=a);
+
+Nand(a=sel, b=in, out=nsela);
+Nand(a=nsela, b=nsela, out=b);
 }
